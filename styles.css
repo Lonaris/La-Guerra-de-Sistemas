@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-family: "roboto condensed";
+	width: 100%;
+	margin: auto;
+	background-image: url("sources/images.jpg");
+	background-repeat: repeat;
+	background-size: 280px 280px;
+	background-blend-mode: overlay;
+	background-color: #555;
+}
+html{
+}
+.Floating{
+	position: absolute;
+	width: 230px;
+	left: 1250px;
+	bottom: -50px;
+	z-index: -1;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+header{
+	height: 80px;
+}
+	
+.Main{
+	/*clear: both;*/
+	background-color: #81b77b;
+	width: 1860px;
+	float: left;
+	border-style: solid;
+	border-color: #754F28;
+	border-width: 30px;
+}
+.Deck-Table{
+	clear: both;
+	margin: auto;
+	margin-left: 700px;
+	margin-right: 700px;
+}
+.Deck-Table img{
+	max-width: 200px;
+}
+.Player-Table{
+	float: left;
+	margin: auto;
+	max-width: 50%;
+	
+}
+.Player-Table img{
+	max-width: 200px;
+}
+.Dev-msg{	
+}
+
+.Title-block{
+	width: 50%;
+	height: 280px;
+	float: left;
+	display: block;
+}
+.Title-block h1{
+	clear: both;
+	position: relative;
+	
+}
+
+img{
+	float: left;
+	margin: 15px;
+}
+.User-block{
+	float: left;
+}
+
+.End-Frame{
+	clear: both;
+}
