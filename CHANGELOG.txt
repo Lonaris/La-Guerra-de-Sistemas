@@ -1,0 +1,15 @@
+La Guerra de Sistemas v0.03 06-06-2016
+
+[HECHO]     Funcionalidad básica de app.js
+[HECHO]     Enlace de juego() en HOME.html
+[HECHO]     Primeras imágenes 
+[HECHO]     Estilos preliminares
+
+[AÑADIR]    La lista de cartas debe incluir 2 comodines
+[AÑADIR]    Cosas lindas a la interfaz
+[AÑADIR]    Control sobre cartas.png
+
+[CORREGIR]  Colores del css
+
+
+[BUG]       La lista de cartas no distingue cartas del mismo numero y distinto palo
