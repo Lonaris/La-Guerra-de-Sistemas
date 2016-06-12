@@ -1,33 +1,45 @@
 //Esta biblioteca contiene la definición de algoritmos, objetos y encapsulamiento adecuados para su uso en la aplicación "La Guerra de Sistemas"
 
 class Game{
-	constructor(){
+	constructor(cantidadPalo = 11){
 		this.empate = false;
 		this.terminado = false;
 		this.cartaA = 0;
 		this.cartaB = 0;
 		this.montoEmpate = [];
+		this.cantidadPalo = cantidadPalo;
 	}
-	terminarJuego(string){ 
+	terminarJuego(string){
 		console.log(string);
-		this.terminado = true; 
+		this.terminado = true;
+		this.empate = false;
+		this.cartasJugadas = [];
+		this.montoEmpate = [];
 	}
 	haTerminado(){ return this.terminado; }
+	
+	tomarValor(carta){ return (carta < 48) ? carta % this.cantidadPalo : 12; } 
 	
 	hacerJugada(playerA, playerB){
 		//STATEMENTS PARA JUGADA
 		var cartaA = playerA.jugarCarta();
-		console.log("El jugador A juega la carta: ", cartaA, ". Le quedan:", playerA.mazo.length);
 		var cartaB = playerB.jugarCarta();
-		console.log("El jugador B juega la carta: ", cartaB, ". Le quedan:", playerB.mazo.length);
 		
+		//IMPLEMENTAR LA BASURA INTERACTIVA CON LA PÁGINA
+		//debería implementar algo como valorCartaA.getValue(), pero fue.
+		var valorCartaA = this.tomarValor(cartaA);
+		var valorCartaB = this.tomarValor(cartaB);
 		
-		this.empate = (cartaA == cartaB) ? true: false;
+		console.log("El jugador A juega la carta: ", cartaA, "de valor", valorCartaA, ". Le quedan:", playerA.mazoPrincipal.length);
+		console.log("El jugador B juega la carta: ", cartaB, "de valor", valorCartaB, ". Le quedan:", playerB.mazoPrincipal.length);
+		
+		this.empate = (valorCartaA == valorCartaB) ? true: false;
 		if(!this.hayEmpate()){ 
-			if(cartaA > cartaB){ 
+			if(valorCartaA > valorCartaB){ 
+			//COLOCAR LAS CARTAS EN UN MAZO SECUNDARIO.
 				playerA.recibirCarta(cartaA); 
 				playerA.recibirCarta(cartaB);
-				console.log(playerA.mazo.length);
+				console.log(playerA.mazoPrincipal.length);
 			}
 			else 			   { 
 				playerB.recibirCarta(cartaB); 
@@ -52,7 +64,7 @@ class Game{
 		if(!this.empate){
 			if(carta2 > cartaB){ 
 				//PRIMER FORMA PARA APILAR EL MONTO EMPATE
-				while(montoEmpate.length > 0){ playerA.recibirCarta(montoEmpate.shift()); }
+				while(montoEmpate.length > 0){ playerA.ganarCarta(montoEmpate.shift()); }
 				/*
 				//SEGUNDA FORMA PARA APILAR EL MONTO EMPATE
 				for x in montoEmpate{
@@ -61,15 +73,15 @@ class Game{
 				montoEmpate = [];
 				//PROBABLEMENTE ESTA FORMA SEA MAS RÁPIDA, DEBIDO A QUE NO HAGO MOVIEMIENTOS EN DOS ARRAYS, PERO CREO QUE PUEDE CONSUMIR MAS MEMORIA.
 				*/
-				playerA.recibirCarta(cartaA);
-				playerA.recibirCarta(cartaB);
+				playerA.ganarCarta(cartaA);
+				playerA.ganarCarta(cartaB);
 			}
 			else{
 				
-				while(montoEmpate.length > 0){ playerB.recibirCarta(montoEmpate.shift()); }
+				while(montoEmpate.length > 0){ playerB.ganarCarta(montoEmpate.shift()); }
 				
-				playerB.recibirCarta(cartaB);
-				playerB.recibirCarta(cartaA);
+				playerB.ganarCarta(cartaB);
+				playerB.ganarCarta(cartaA);
 			}
 		}
 		else{ this.montoEmpate.unshift(cartaA, cartaB); } //ESTE SI QUE ANDA, ES UNSHIFT Y PUEDE TOMAR MUCHOS ELEMENTOS COMO PARAMETRO
@@ -77,20 +89,23 @@ class Game{
 }
 
 class Player{
-	constructor(nombre){
+	constructor(nombre = 'noname'){
 		this.nombre = nombre;
-		this.mazo = []
+		this.mazoPrincipal = [];
+		this.mazoRevancha = [];
 	}
-	recibirCarta(carta){ this.mazo.push(carta); }
-	jugarCarta(){ return this.mazo.shift(); }
-	puedeEmpatar(){ return (this.mazo.length > 1) ? true : false; }
-	haPerdido(){ return (this.mazo.length > 0) ? false : true; }
+	recibirCarta(carta){ this.mazoPrincipal.push(carta); }
+	ganarCarta(carta) { this.mazoRevancha.push(carta); }
+	jugarCarta(){ return this.mazoPrincipal.shift(); }
+	puedeEmpatar(){ return (this.mazoPrincipal.length + this.mazoRevancha.length > 1) ? true : false; }
+	haPerdido(){ return (this.mazoPrincipal.length + this.mazoRevancha.length > 0) ? false : true; }
+	tomarRevancha(){ this.mazoPrincipal = this.mazoRevancha; }
 	darNombre(){ return this.nombre;}
 }
 
 
 class Deck{
-	constructor(cantidad = 48){
+	constructor(cantidad = 50){
 		//TEST
 		this.cantidad = cantidad;
 		this.cartasEnOrden = [];
