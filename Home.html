@@ -3,12 +3,14 @@
 	<head>
 		<meta charset = "UTF-8">
 		<link rel = "stylesheet" type = "text/css" href = "styles.css">
-		<script type = "text/javascript" src = "guiones.js" ></script>
+		<script type = "text/javascript" src = "core_game.js" ></script>
 		<script type = "text/javascript" src ="app.js" ></script>
 		<title>La guerra de Sistemas</title>
 	</head>
-	<body>
+	<body onunload = 'surrender()'>
+		
 		<img id = "Broken-Bottle" class = "Floating" src = "images/broken-whiskey.png">
+		
 		<header>
 			<div class = "Title-Block">
 				<img src = "images/ISFT-50x50.png">
@@ -29,7 +31,8 @@
 				<img src = "images/reverso.png">
 				<img src = "images/reverso.png">
 			</div> 
-			<div class = "Hazme-Click"><button onclick='play()'>The time is?</button> </div>
+			<div class = "Hazme-Click"><button onclick='play()'>Play</button> </div>
+			<div class = "Hazme-Click"><button onclick='surrender()'>Surrender</button> </div>
 			<div id = "playerTwo" class = "Player-Table">
 				<img src = "images/reverso.png">
 				<img src = "images/reverso.png">
