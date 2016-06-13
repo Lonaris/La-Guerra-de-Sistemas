@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	
 		<meta charset = "UTF-8">
-		<link rel = "stylesheet" type = "text/css" href = "styles.css">
-		<script type = "text/javascript" src = "core_game.js" ></script>
+		<link rel = "stylesheet" type = "text/css" href = "new styles.css">
+		
+	<!--Cabecera, toda la carga de elementos necesarios para la lógica.-->
+	
+		<script type = "text/javascript" src = "game_core/core_game.js" ></script>
+		<script type = "text/javascript" src ="game_core/core_player.js" ></script>
+		<script type = "text/javascript" src ="game_core/core_deck.js" ></script>
+		
+	<!--	<script type = "text/javascript" src ="UI/dynamic_styles.js" ></script> -->
+		
 		<script type = "text/javascript" src ="app.js" ></script>
-		<title>La guerra de Sistemas</title>
+		
+		<title>La guerra de Sistemas</title> <!--Estatico, obvio-->
+	
 	</head>
+	
 	<body onunload = 'surrender()'>
 		
 		<img id = "Broken-Bottle" class = "Floating" src = "images/broken-whiskey.png">
 		
 		<header>
+			<!--Estatico-->
 			<div class = "Title-Block">
 				<img src = "images/ISFT-50x50.png">
 				<h1>La guerra de sistemas</h1>
 			</div>
-			<div class = "User-Block"> 
+
+			
+			<span class = "User-Block"> <!--Dinamico--> 
 				<php?> </php>
-			</div>
+			</span>
+
 			<div class = "End-Frame"></div>
-		</header>
+
+			</header>
+	
 		<content class = "Main"> 
-			<div class = "Deck-Table">
-				<img src = "images/reverso.png">
-				<img src = "images/reverso.png">
+
+			<div class = "War-Table">
+				<img id = "JugadaP1" src = "sources/48 cartas españolas.jpg"> <!--La imagen debe haberse cargado del lado del usuario, ¿la lógica de control se la debe pedir al servidor o la dejo del lado del user?-->
+				<span id = "JugadaP2"></span>
 			</div>
+			
 			<div class = "End-Frame"></div>
-			<div id = "playerOne" class = "Player-Table" style = "margin-left: 470px">
-				<img src = "images/reverso.png">
-				<img src = "images/reverso.png">
-			</div> 
-			<div class = "Hazme-Click"><button onclick='play()'>Play</button> </div>
-			<div class = "Hazme-Click"><button onclick='surrender()'>Surrender</button> </div>
+			
+			<div id = "playerOne" class = "Player-Table"> <!--Dinamico. Las cartas se hayan en  el servidor, que debe comunicarse con la lógica para traerlo acá. Lo mismo para el Jugador 2-->
+				<span><img id = "p1MazoRevancha" src = "images/reverso.png"></span>
+				<span><img id = "p1MazoPrincipal" src = "images/reverso.png"></span>
+			</div>  
+			
 			<div id = "playerTwo" class = "Player-Table">
-				<img src = "images/reverso.png">
-				<img src = "images/reverso.png">
+				<img id = "p2MazoPrincipal" src = "images/reverso.png">
+				<img id = "p2MazoRevancha" src = "images/reverso.png">
 			</div>
+		
 		</content>
-		<footer>
-			<div class = "Dev-msg"></img src = "">Desarrollado por Juan Ramayo, inc. </div>
+		
+		<footer> <!--Estático, obvio.-->
+			<div class = "Dev-msg"></img src = "">Desarrollado por Juan Ramayo.</div>
+	
 		</footer>
+		
 	</body>
+	
 </html>
