@@ -2,16 +2,21 @@
 /* CSS Document */
 
 body{
-	font-family: "roboto condensed";
-	width: 100%;
-	margin: auto;
+	font-family: "roboto condensed", "arial" ;
+	width: 95%;
+	margin: 0;
+	padding: 0;
 	background-image: url("sources/images.jpg");
+	
 	background-repeat: repeat;
 	background-size: 280px 280px;
 	background-blend-mode: overlay;
 	background-color: #555;
 }
 html{
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 .Floating{
 	position: absolute;
@@ -29,26 +34,27 @@ header{
 	
 .Main{
 	/*clear: both;*/
+	display: block;
 	background-color: #81b77b;
-	width: 1860px;
+	background-image: url("sources/PokerFullTable.jpg");
+	width: 100%;
+	height: 720px; 
 	float: left;
 	border-style: solid;
+	border-image: repeat;
+/*	border-image: url("sources/rustic-wall-mirrors.jpg");*/
 	border-color: #754F28;
 	border-width: 30px;
 }
-.Deck-Table{
+.War-Table{
+	position: relative;
 	clear: both;
 	margin: auto;
-	margin-left: 700px;
-	margin-right: 700px;
 }
-.Deck-Table img{
-	max-width: 200px;
-}
+
 .Player-Table{
 	float: left;
 	margin: auto;
-	max-width: 50%;
 	
 }
 .Player-Table img{
@@ -72,11 +78,22 @@ header{
 img{
 	float: left;
 	margin: 15px;
+	display: none;
 }
 .User-block{
-	float: left;
+	float: right;
 }
 
 .End-Frame{
 	clear: both;
+}
+
+#JugadaP1{
+	position: absolute;
+	clip: rect(0, 344px, 600px, 0);
+	width: 300px;
+}
+#JugadaP2{
+	
+	background-image: url();
 }

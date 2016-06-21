@@ -3,7 +3,7 @@
 	<head>
 	
 		<meta charset = "UTF-8">
-		<link rel = "stylesheet" type = "text/css" href = "new styles.css">
+		<link rel = "stylesheet" type = "text/css" href = "styles.css">
 		
 	<!--Cabecera, toda la carga de elementos necesarios para la lógica.-->
 		<script type = "text/javascript" src ="game_core/sprite_class.js" ></script>
@@ -42,8 +42,10 @@
 		<content class = "Main"> 
 
 			<div class = "War-Table">
-				<img id = "JugadaP1" src = "sources/48 cartas españolas.jpg"> <!--La imagen debe haberse cargado del lado del usuario, ¿la lógica de control se la debe pedir al servidor o la dejo del lado del user?-->
-				<span id = "JugadaP2"></span>
+			<div id = "JugadaP1">
+				<img id = "CartaJugadaP1" src = "sources/48 cartas españolas.jpg"> <!--La imagen debe haberse cargado del lado del usuario, ¿la lógica de control se la debe pedir al servidor o la dejo del lado del user?-->
+			</div>			
+			<div id = "JugadaP2"></div>
 			</div>
 			
 			<div class = "End-Frame"></div>

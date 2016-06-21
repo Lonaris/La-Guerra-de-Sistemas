@@ -40,9 +40,23 @@ Esta versión no va a soportar las siguientes características:
 - Historial de juegos
 
 ##FLUJO DE PROGRAMA
+
 Este diagrama de flujo no está completo, tampoco refleja la totalidad de las operaciones que puede realizar un usuario que ingresa a la página. Aún así representa la imagen general de cómo funciona la aplicación.
+
+![](https://raw.githubusercontent.com/Lonaris/La-Guerra-de-Sistemas/master/documentation/La%20Guerra%20de%20Sistemas%20-%20FlowChart.png)
  
 ##PANTALLA A PANTALLA
 A continuación se detalla de forma breve la manera en que se debería comportar y mostrar cada pantalla.
 
 ###HOME PAGE
+
+###GAME LOOP
+El **Game Loop** presenta múltiples estados que está bueno tener en cuenta a la hora de hacer el jueguito, acá hay una primera versión de los estados y algunos de los eventos que activan los cambios de estado:
+
+![](https://raw.githubusercontent.com/Lonaris/La-Guerra-de-Sistemas/master/documentation/La%20Guerra%20de%20Sistemas%20-%20GameLoop%20(Estados).png)
+
+Cada estado representa algo distinto que *debe verse en la pantalla del lado del usuario*.
+
+Por lo tanto hay un cambio en la interfaz entre estado y estado.
+
+*Nota: El estado **Pausa** es accesible desde cualquier estado.

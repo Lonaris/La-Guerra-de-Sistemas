@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width: 100%;
+	margin: 0;
+	
+	font-family: "roboto condensed", "arial" ;
+	color: #B1B1B1;
+	
+	float: left;
+	
+	background-image: url("sources/images.jpg");
+	background-repeat: repeat;
+	background-size: 280px 280px;
+	background-blend-mode: overlay;
+	background-color: #334;
+}
+html{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.Main{
+	width: 100% - border-width; /*UN HERMOSO TRUCO QUE ENCONTRÉ PARA EVITARME DOLORES DE CABEZA!*/
+	display: block;
+	padding: 30px;
+	
+	background-image: url("sources/PokerFullTable.jpg");
+	border-style: solid;
+	border-image: repeat;
+/*	border-image: url("sources/rustic-wall-mirrors.jpg");*/
+	border-color: #754F28;
+	border-width: 30px;
+	
+}
+
+.Floating{
+	display: none;
+}
+img {
+	display: INLINE;
+}
+
+.End-Frame{
+	display: inline;
+	clear: both;
+}
+
+.Player-Table{
+	width: 30%;
+	margin: 0;
+}

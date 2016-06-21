@@ -5,6 +5,7 @@ class Player{
 		this.nombre = nombre;
 		this.mazoPrincipal = [];
 		this.mazoRevancha = [];
+		
 		this.cardSprite = new Sprite();
 	}
 	recibirCarta(carta){ this.mazoPrincipal.push(carta); }
