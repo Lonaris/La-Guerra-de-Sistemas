@@ -1,7 +1,7 @@
-//Esta biblioteca contiene la definición del objeto Mazo para su uso en la aplicación "La Guerra de Sistemas"
+//Esta biblioteca contiene la definiciï¿½n del objeto Mazo para su uso en la aplicaciï¿½n "La Guerra de Sistemas"
 
 class Deck{
-	constructor(cantidad = 50){
+	constructor(cantidad = 48){
 		//TEST
 		this.cantidad = cantidad;
 		this.cartasEnOrden = [];
@@ -16,12 +16,12 @@ class Deck{
 	}
 	mezclar(){
 		//RANDOMIZAR! Y TEST
-		
+
 		while (this.cartasDesordenadas.length > 0){
 //			console.log("Cantidad de cartas en CartasDesordenadas : ", this.cartasDesordenadas.length);
-			var index = Math.floor((Math.random() * 10000) % (this.cartasDesordenadas.length));	
+			var index = Math.floor((Math.random() * 10000) % (this.cartasDesordenadas.length));
 //			console.log("Indice aleatorio : ", index);
-			
+
 			this.cartasEnOrden.push(this.cartasDesordenadas.splice(index, 1).pop());
 		}
 //		console.log(this.cartasEnOrden);
@@ -34,7 +34,7 @@ class Deck{
 		return cartasEnOrden;
 	}
 	*/
-	
+
 	repartir(playerA, playerB){
 		this.mezclar(); //MEZCLAR TIENE QUE LLAMARSE SI O SI, DE LO CONTRARIO cartasEnOrden es null, el pop() puede tirar error y el while puede no entrar nunca.
 		while(this.cartasEnOrden.length > 0){

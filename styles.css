@@ -1,99 +1,69 @@
-@charset "utf-8";
-/* CSS Document */
 
 body{
-	font-family: "roboto condensed", "arial" ;
-	width: 95%;
-	margin: 0;
-	padding: 0;
-	background-image: url("sources/images.jpg");
-	
-	background-repeat: repeat;
-	background-size: 280px 280px;
-	background-blend-mode: overlay;
-	background-color: #555;
+    width: 1000px;
+    margin: auto;
 }
-html{
-	width: 100%;
-	margin: 0;
-	padding: 0;
+
+.Title-Block {}
+
+.Image { float:left; }
+
+h1{
+    margin: 7px;
+    float:left;
 }
-.Floating{
-	position: absolute;
-	width: 230px;
-	left: 1250px;
-	bottom: -50px;
-	z-index: -1;
-	-ms-transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-header{
-	height: 80px;
-}
-	
+
+.User-Block {}
+
+.End-Frame { clear: both; }
+
 .Main{
-	/*clear: both;*/
-	display: block;
-	background-color: #81b77b;
-	background-image: url("sources/PokerFullTable.jpg");
-	width: 100%;
-	height: 720px; 
-	float: left;
-	border-style: solid;
-	border-image: repeat;
-/*	border-image: url("sources/rustic-wall-mirrors.jpg");*/
-	border-color: #754F28;
-	border-width: 30px;
-}
-.War-Table{
-	position: relative;
-	clear: both;
-	margin: auto;
+    float: left;
+    background-image: url("background.jpg");
+
+    width: 1000px;
+    /*height: 768px; /*Esto está para poder ver y testear*/
 }
 
-.Player-Table{
-	float: left;
-	margin: auto;
-	
+.War-Table {}
+
+.Player-Table {
+    float: left;
+    width: 50%;
 }
-.Player-Table img{
-	max-width: 200px;
+.Player-Table h3{
+    margin: 0;
+    font-size: 12pt;
+    text-align: center;
 }
-.Dev-msg{	
+.Card img {
+    width: 160px;
+    height: 256px;
 }
 
-.Title-block{
-	width: 50%;
-	height: 280px;
-	float: left;
-	display: block;
-}
-.Title-block h1{
-	clear: both;
-	position: relative;
-	
+.Card input { width: 160px;
+
 }
 
-img{
-	float: left;
-	margin: 15px;
-	display: none;
+#p1Play {
+    float:right;
+    margin: 0 5px;
 }
-.User-block{
-	float: right;
+#p2Play {
+    float: left;
+    margin: 0 5px;
+}
+#playerOne { }
+#playerTwo { }
+#p1MainDeck { float: left;}
+#p2MainDeck { float: right; }
+#p1SecondDeck {
+    margin: 0 10px;
+    float: left;
+}
+#p2SecondDeck {
+    margin: 0 10px;
+    float: right;
 }
 
-.End-Frame{
-	clear: both;
-}
-
-#JugadaP1{
-	position: absolute;
-	clip: rect(0, 344px, 600px, 0);
-	width: 300px;
-}
-#JugadaP2{
-	
-	background-image: url();
-}
+.Dev-msg {}

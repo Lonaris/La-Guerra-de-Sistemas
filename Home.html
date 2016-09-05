@@ -1,72 +1,103 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	
+
 		<meta charset = "UTF-8">
 		<link rel = "stylesheet" type = "text/css" href = "styles.css">
-		
-	<!--Cabecera, toda la carga de elementos necesarios para la lógica.-->
-		<script type = "text/javascript" src ="game_core/sprite_class.js" ></script>
+
+	<!--Cabecera, toda la carga de elementos necesarios para la lógica.
+		<script type = "text/javascript" src ="game_core/sprite_class.js" ></script>-->
 		<script type = "text/javascript" src ="game_core/core_game.js" ></script>
 		<script type = "text/javascript" src ="game_core/core_player.js" ></script>
 		<script type = "text/javascript" src ="game_core/core_deck.js" ></script>
-		
+		<script type = "text/javascript" src ="Cards.js" ></script>
+
+
 	<!--	<script type = "text/javascript" src ="UI/dynamic_styles.js" ></script> -->
-		
+	<!-- Acá está la aplicación principal -->
 		<script type = "text/javascript" src ="app.js" ></script>
-		
+
 		<title>La guerra de Sistemas</title> <!--Estatico, obvio-->
-	
+
 	</head>
-	
+
 	<body onunload = 'surrender()'>
-		
-		<img id = "Broken-Bottle" class = "Floating" src = "images/broken-whiskey.png">
-		
 		<header>
 			<!--Estatico-->
 			<div class = "Title-Block">
-				<img src = "images/ISFT-50x50.png">
+				<span class = "Image"><img id = logo src = "images/ISFT-50x50.png"></span>
 				<h1>La guerra de sistemas</h1>
 			</div>
 
-			
-			<span class = "User-Block"> <!--Dinamico--> 
+
+			<span class = "User-Block"> <!--Dinamico-->
 				<php?> </php>
 			</span>
 
 			<div class = "End-Frame"></div>
 
 			</header>
-	
-		<content class = "Main"> 
 
-			<div class = "War-Table">
-			<div id = "JugadaP1">
-				<img id = "CartaJugadaP1" src = "sources/48 cartas españolas.jpg"> <!--La imagen debe haberse cargado del lado del usuario, ¿la lógica de control se la debe pedir al servidor o la dejo del lado del user?-->
-			</div>			
-			<div id = "JugadaP2"></div>
-			</div>
-			
+		<content class = "Main">
+
 			<div class = "End-Frame"></div>
-			
-			<div id = "playerOne" class = "Player-Table"> <!--Dinamico. Las cartas se hayan en  el servidor, que debe comunicarse con la lógica para traerlo acá. Lo mismo para el Jugador 2-->
-				<span><img id = "p1MazoRevancha" src = "images/reverso.png"></span>
-				<span><img id = "p1MazoPrincipal" src = "images/reverso.png"></span>
-			</div>  
-			
+
+			<span id = "playerOne" class = "Player-Table"> <!--Dinamico. Las cartas se hayan en  el servidor, que debe comunicarse con la lógica para traerlo acá. Lo mismo para el Jugador 2-->
+				<div class = "War-Table">
+
+					<span class = "Card" id = "p1Play" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<h3>Carta en juego</h3>
+						<img id="p1CardPlay" src = "images/reverso.png">
+					</span>
+					<div class = "End-Frame"></div>
+				</div>
+
+				<span class = "Card" id = "p1SecondDeck">
+					<h3>Mazo Revancha</h3>
+					<img src = "images/reverso.png">
+				</span>
+
+				<span class = "Card" id = "p1MainDeck" draggable="true" ondragstart="drag(event)">
+					<h3>Mazo Principal</h3>
+					<input type="image" src="images/reverso.png" id="p1CardButton" onclick="play();"/>
+				</span>
+
+
+
+
+			</span>
+
 			<div id = "playerTwo" class = "Player-Table">
-				<img id = "p2MazoPrincipal" src = "images/reverso.png">
-				<img id = "p2MazoRevancha" src = "images/reverso.png">
+				<div class = "War-Table">
+					<span class = "Card" id = "p2Play" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<h3>Carta en juego</h3>
+						<img id="p2CardPlay" src="images/reverso.png">
+					</span>
+					<div class = "End-Frame"></div>
+				</div>
+
+				<span class = "Card" id = "p2SecondDeck">
+					<h3>Mazo de Revancha</h3>
+					<img src = "images/reverso.png">
+				</span>
+
+				<span class = "Card" id = "p2MainDeck" draggable="true" ondragstart="drag(event)">
+					<h3>Mazo Principal</h3>
+					<img src = "images/reverso.png">
+				</span>
+<!--				<span class = "Card" id = "p1MaindDeck"> <? CONSULTA DE LA CARTA></span>
+-->
 			</div>
-		
+
+
 		</content>
-		
+		<div class = "End-Frame"></div>
+
 		<footer> <!--Estático, obvio.-->
 			<div class = "Dev-msg"></img src = "">Desarrollado por Juan Ramayo.</div>
-	
+
 		</footer>
-		
+
 	</body>
-	
+
 </html>

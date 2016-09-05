@@ -1,20 +1,20 @@
-//Esta biblioteca contiene la definición del objeto Player para su uso en la aplicación "La Guerra de Sistemas"
+//Esta biblioteca contiene la definiciï¿½n del objeto Player para su uso en la aplicaciï¿½n "La Guerra de Sistemas"
 
 class Player{
 	constructor(nombre = 'anon'){
 		this.nombre = nombre;
 		this.mazoPrincipal = [];
 		this.mazoRevancha = [];
-		
-		this.cardSprite = new Sprite();
+
+		//this.cardSprite = new Sprite();
 	}
 	recibirCarta(carta){ this.mazoPrincipal.push(carta); }
 	ganarCarta(carta) { this.mazoRevancha.push(carta); }
-	jugarCarta(){ 
+	jugarCarta(){
 		if(!this.haPerdido())
 			if(this.mazoVacio()){ this.tomarRevancha(); }
 			return this.mazoPrincipal.shift();
-		
+
 	}
 	mazoVacio(){ return (this.mazoPrincipal.length < 1) ? true : false; }
 	puedeEmpatar(){ return (this.mazoPrincipal.length + this.mazoRevancha.length > 1) ? true : false; }
