@@ -10,10 +10,30 @@ body{
 
 h1{
     margin: 7px;
-    float:left;
+    float: left;
 }
 
-.User-Block {}
+.User-Block ul{
+    display: inline-block;
+    float: right;
+}
+
+.User-Block li{
+    float:right;
+    display: block;
+    width: 80px;
+    padding-right: 50px;
+}
+
+#Login{
+    float: right;
+    display: block;
+
+}
+
+.Box{
+    width: 80px;
+}
 
 .End-Frame { clear: both; }
 
