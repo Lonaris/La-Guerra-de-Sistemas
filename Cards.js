@@ -48,6 +48,8 @@ cartas[44] = "oros_8.jpg";
 cartas[45] = "oros_9.jpg";
 cartas[46] = "oros_10.jpg";
 cartas[47] = "oros_11.jpg";
+cartas[48] = "reverso.png";
+cartas[49] = "nada.png";
 
 function changeSource(elem, cardNum){
     console.log(elem);

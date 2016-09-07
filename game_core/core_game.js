@@ -2,11 +2,6 @@
 
 class Game{
 	constructor(cantidadPalo = 11){
-		this.empate = false;
-		this.terminado = false;
-		this.cartaA = 0;
-		this.cartaB = 0;
-		this.montoEmpate = [];
 		this.cantidadPalo = cantidadPalo;
 	}
 	terminarJuego(string){
@@ -20,6 +15,20 @@ class Game{
 
 	tomarValor(carta){ return (carta%12 != 0) ? carta % 12 : 12; }
 
+	comenzarJuego(){
+		this.empate = false;
+		this.terminado = false;
+		this.cartaA = 0;
+		this.cartaB = 0;
+		this.montoEmpate = [];
+
+		changeSource(p1SecondDeckImg, 49);
+		changeSource(p2SecondDeckImg, 49);
+		changeSource(p1MainDeck, 48);
+		changeSource(p2MainDeck, 48);
+		changeSource(p1CardPlay, 49);
+		changeSource(p2CardPlay, 49);
+	}
 	hacerJugada(playerA, playerB){
 		//STATEMENTS PARA JUGADA
 		var cartaA = playerA.jugarCarta();
@@ -32,6 +41,7 @@ class Game{
 
 		console.log("El jugador A juega la carta: ", cartaA, "de valor", valorCartaA, ". Le quedan:", playerA.mazoPrincipal.length, " en el mazo principal y ", playerA.mazoRevancha.length, " en el mazo de revancha.");
 		changeSource(p1CardPlay, cartaA);
+		console.log(p1CardPlay);
 		console.log("El jugador B juega la carta: ", cartaB, "de valor", valorCartaB, ". Le quedan:", playerB.mazoPrincipal.length, " en el mazo principal y ", playerB.mazoRevancha.length, " en el mazo de revancha.");
 		changeSource(p2CardPlay, cartaB);
 

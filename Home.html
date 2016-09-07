@@ -49,54 +49,54 @@
 
 		<content class = "Main">
 
-			<div class = "End-Frame"></div>
+			<div class = "War-Table">
+
+				<span class = "Card" id = "p1Play">
+					<h3>Carta en juego</h3>
+					<img id="p1CardPlay" src = "images/cartas/nada.png">
+				</span>
+				<div class = "End-Frame"></div>
+			</div>
+			<div class = "War-Table">
+				<span class = "Card" id = "p2Play">
+					<h3>Carta en juego</h3>
+					<img id="p2CardPlay" src="images/cartas/nada.png">
+				</span>
+				<div class = "End-Frame"></div>
+			</div>
 
 			<span id = "playerOne" class = "Player-Table"> <!--Dinamico. Las cartas se hayan en  el servidor, que debe comunicarse con la lógica para traerlo acá. Lo mismo para el Jugador 2-->
-				<div class = "War-Table">
-
-					<span class = "Card" id = "p1Play" ondrop="drop(event)" ondragover="allowDrop(event)">
-						<h3>Carta en juego</h3>
-						<img id="p1CardPlay" src = "images/reverso.png">
-					</span>
-					<div class = "End-Frame"></div>
-				</div>
-
-				<span class = "Card" id = "p1SecondDeck">
+				<span class = "Card" id = "p1SecondDeck" >
 					<h3>Mazo Revancha</h3>
-					<img src = "images/reverso.png">
+					<img  id="p1SecondDeckImg" src = "images/cartas/nada.png">
 				</span>
-
-				<span class = "Card" id = "p1MainDeck" draggable="true" ondragstart="drag(event)">
+				<span class = "Card" >
 					<h3>Mazo Principal</h3>
-					<input type="image" src="images/reverso.png" id="p1CardButton" onclick="play();"/>
+					<img id="p1MainDeck" src = "images/cartas/reverso.png">
+<!--					<input type="image" src="images/nada.png" id="p1CardButton" onclick="play();"/>-->
 				</span>
-
-
-
-
 			</span>
 
-			<div id = "playerTwo" class = "Player-Table">
-				<div class = "War-Table">
-					<span class = "Card" id = "p2Play" ondrop="drop(event)" ondragover="allowDrop(event)">
-						<h3>Carta en juego</h3>
-						<img id="p2CardPlay" src="images/reverso.png">
-					</span>
-					<div class = "End-Frame"></div>
-				</div>
+			<div class = "Cuadro-De-Mensajes">
 
+				<input type="button" id="Repartir" value="Repartir" onclick="deal();"></input>
+				<input type="button" id="Jugar" value="Jugar" onclick="play();"></input>
+				<input type="button" id="Rendirse" value="Rendirse" onclick="surrender();"></input>
+
+			</div>
+
+			<span id = "playerTwo" class = "Player-Table">
 				<span class = "Card" id = "p2SecondDeck">
 					<h3>Mazo de Revancha</h3>
-					<img src = "images/reverso.png">
+					<img  id="p2SecondDeckImg" src = "images/cartas/nada.png">
 				</span>
-
-				<span class = "Card" id = "p2MainDeck" draggable="true" ondragstart="drag(event)">
+				<span class = "Card">
 					<h3>Mazo Principal</h3>
-					<img src = "images/reverso.png">
+					<img id="p2MainDeck" src = "images/cartas/reverso.png">
 				</span>
 <!--				<span class = "Card" id = "p1MaindDeck"> <? CONSULTA DE LA CARTA></span>
 -->
-			</div>
+			</span>
 
 
 		</content>

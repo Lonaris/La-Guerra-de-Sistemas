@@ -7,16 +7,16 @@ class Deck{
 		this.cartasEnOrden = [];
 		this.cartasDesordenadas = [];
 		this.cartas = []; //SUPONGO QUE VOY A USAR ESTO PARA HACER LA MATRIZ DE DESPLAZAMIENTO DE DISPLAY.
-		var i;
-		for (i = 0; i < cantidad; i ++) {
-			this.cartas.push(i);
-			this.cartasDesordenadas.push(i);
-		}
+
 //		console.log(this.cartasDesordenadas);
 	}
 	mezclar(){
 		//RANDOMIZAR! Y TEST
-
+		
+		for (var i = 0; i < this.cantidad; i ++) {
+			this.cartas.push(i);
+			this.cartasDesordenadas.push(i);
+		}
 		while (this.cartasDesordenadas.length > 0){
 //			console.log("Cantidad de cartas en CartasDesordenadas : ", this.cartasDesordenadas.length);
 			var index = Math.floor((Math.random() * 10000) % (this.cartasDesordenadas.length));

@@ -11,7 +11,7 @@ var juego = new Game(); //Este objeto contiene las reglas del juego
 
 //baraja.inicializarCartas(); //La baraja debe ser Const, as� no muevo los datos dentro de ella.
 baraja.repartir(jugadorUno, jugadorDos); //La baraja debe ser Const, pasar los jugadores por referencia.
-
+juego.comenzarJuego();
 console.log(jugadorUno == jugadorDos ? true : false);
 
 //changeSource(p1CardPlay)
@@ -25,8 +25,18 @@ function play(){
 	if (jugadorDos.haPerdido()){ juego.terminarJuego("Has Ganado!"); }
 }
 
-function restart(){
-
+function deal(){
+	if(!juego.haTerminado())
+		var sosCagon = confirm("Sabés que si le das a repartir de nuevo perdés la partida?");
+	console.log(sosCagon);
+	if(sosCagon){
+		jugadorUno.haPerdido();
+		juego.terminarJuego("Has Perdido!");
+		jugadorUno.vaciarMazo();
+		jugadorDos.vaciarMazo();
+		baraja.repartir(jugadorUno, jugadorDos);
+		juego.comenzarJuego();
+	}
 }
 
 function pause(state){
@@ -34,5 +44,5 @@ function pause(state){
 }
 
 function surrender(){
-	confirm("Seguro?");
+	var sosCagon = confirm("Seguro?");
 }

@@ -45,11 +45,27 @@ h1{
     /*height: 768px; /*Esto está para poder ver y testear*/
 }
 
-.War-Table {}
+.War-Table {
+    width: 50%;
+float: left;
+}
+
+
+
+.Cuadro-De-Mensajes {
+    float: left;
+    width: 28%;
+}
+.Cuadro-De-Mensajes input {
+    display: block;
+    position: relative;
+    margin: 50px auto;
+
+}
 
 .Player-Table {
     float: left;
-    width: 50%;
+    width: 36%;
 }
 .Player-Table h3{
     margin: 0;
@@ -61,9 +77,7 @@ h1{
     height: 256px;
 }
 
-.Card input { width: 160px;
-
-}
+.Card input { width: 160px;}
 
 #p1Play {
     float:right;

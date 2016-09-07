@@ -16,9 +16,10 @@ class Player{
 			return this.mazoPrincipal.shift();
 
 	}
-	mazoVacio(){ return (this.mazoPrincipal.length < 1) ? true : false; }
-	puedeEmpatar(){ return (this.mazoPrincipal.length + this.mazoRevancha.length > 1) ? true : false; }
-	haPerdido(){ return (this.mazoPrincipal.length + this.mazoRevancha.length > 0) ? false : true; }
-	tomarRevancha(){ this.mazoPrincipal = this.mazoRevancha; this.mazoRevancha = [];}
-	darNombre(){ return this.nombre;}
+	vaciarMazo() { this.mazoPrincipal = []; this.mazoRevancha = []; }
+	mazoVacio() { return (this.mazoPrincipal.length < 1) ? true : false; }
+	puedeEmpatar() { return (this.mazoPrincipal.length + this.mazoRevancha.length > 1) ? true : false; }
+	haPerdido() { return (this.mazoPrincipal.length + this.mazoRevancha.length > 0) ? false : true; }
+	tomarRevancha() { this.mazoPrincipal = this.mazoRevancha; this.mazoRevancha = [];}
+	darNombre() { return this.nombre;}
 }
