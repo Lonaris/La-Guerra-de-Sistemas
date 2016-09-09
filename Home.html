@@ -11,7 +11,6 @@
 		<script type = "text/javascript" src ="game_core/core_deck.js" ></script>
 		<script type = "text/javascript" src ="Cards.js" ></script>
 
-
 	<!--	<script type = "text/javascript" src ="UI/dynamic_styles.js" ></script> -->
 	<!-- Acá está la aplicación principal -->
 		<script type = "text/javascript" src ="app.js" ></script>
@@ -34,8 +33,9 @@
 
                 <ul>
                     <input type="submit" id="Login" value="Iniciar Sesión">
-                    <li><input class="Box" placeholder="contraseña" type="box" id="passBox"></li>
-                    <li><input class="Box" placeholder="usuario" type="box" id="userBox"></li>
+                    <li><input placeholder="contraseña" type="box" id="passBox"><a href="php/pass-recover.php">Olvidaste la contraseña?</a></li>
+                    <li><input placeholder="usuario" type="box" id="userBox"><a href="php/register.php">Registrate!</a></li>
+
 
                 </ul>
                 <?php
