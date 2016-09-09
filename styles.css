@@ -2,8 +2,12 @@
 body{
     width: 1000px;
     margin: auto;
+    color: #0F2C6E;
+    font-family: fantasy;
 }
-
+h3{
+    color: #000;
+}
 .Title-Block {}
 
 .Image { float:left; }
@@ -25,6 +29,22 @@ h1{
     padding-right: 50px;
 }
 
+.User-Block a{
+    text-decoration: none;
+    font-size: 10pt;
+    color: #254DA8;
+}
+.User-Block a:hover{
+    text-decoration: underline;
+    color: #5C7ABF;
+}
+.User-Block a:active{
+    text-decoration: none;
+}
+.User-Block a:visited{
+    text-decoration: none;
+    color: #9EB4E7;
+}
 #Login{
     float: right;
     display: block;
@@ -49,8 +69,6 @@ h1{
     width: 50%;
 float: left;
 }
-
-
 
 .Cuadro-De-Mensajes {
     float: left;

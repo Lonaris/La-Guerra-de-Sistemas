@@ -1,15 +1,29 @@
+La Guerra de Sistemas v0.8 09-09-2016
+
+[HECHO]     Rediseñada la maquetación
+[HECHO]     Reorganizada la hoja de estilos principal
+[HECHO]     Añadida la maqueta para registración de nuevo usuario
+[HECHO]     Implementada la actualización de la interfaz en js
+
+[OMITIDO]   La lista de cartas no va a incluir comodines por una cuestión de balanceo.
+
+[FIXED]     La lista de cartas ya hace la distinción de forma correcta
+[FIXED]     El cálculo del valor de la carta en base al índice ya no arroja resultados erroneos.
+[FIXED]     Añadida la convertibilidad de php a html (.htaccess)
+
+[BUG]       Una vez terminado el juego se pueden seguir tirando cartas.
+
 La Guerra de Sistemas v0.03 06-06-2016
 
-[HECHO]     Funcionalidad b�sica de app.js
+[HECHO]     Funcionalidad básica de app.js
 [HECHO]     Enlace de juego() en HOME.html
-[HECHO]     Primeras im�genes 
+[HECHO]     Primeras imágenes
 [HECHO]     Estilos preliminares
 
-[A�ADIR]    La lista de cartas debe incluir 2 comodines
-[A�ADIR]    Cosas lindas a la interfaz
-[A�ADIR]    Control sobre cartas.png
+[AÑADIR]    La lista de cartas debe incluir 2 comodines
+[AÑADIR]    Cosas lindas a la interfaz
+[AÑADIR]    Control sobre cartas.png
 
 [CORREGIR]  Colores del css
-
 
 [BUG]       La lista de cartas no distingue cartas del mismo numero y distinto palo

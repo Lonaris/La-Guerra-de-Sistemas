@@ -1,0 +1,40 @@
+
+body{
+    width: 500px;
+    margin: auto;
+    color: #0F2C6E;
+    font-family: fantasy;
+}
+
+.Input-Wrapper{
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+}
+.Input-Wrapper input {
+    float:left;
+    display: inline;
+    width: 150px;
+    margin: 0 4%;
+    margin-bottom: 40px;
+}
+input{
+    display: block;
+    width: 120px;
+    margin: 40px auto;
+}
+.Title-Block span{
+    width: 400px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+h1{
+    margin: 40px auto;
+    text-align: center;
+    display: block;
+}
+
+.End-Frame { clear: both; }
+
+.Dev-msg {}
